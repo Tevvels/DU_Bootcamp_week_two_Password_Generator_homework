@@ -15,6 +15,8 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
+//// customs////
+
 function generatePassword( ){
 
 
@@ -52,25 +54,29 @@ function generatePassword( ){
       questionThree("Please be serious, Do you need special characters?");
     }
     if(questionThreeValue === "No" || questionThreeValue === "no"){
-      console.log(questionTwoValue)
+      return questionTwoValue;
+
+
+
     } else {
-      console.log(questionTwoValue + " and " + questionThreeValue);
+      return questionTwoValue + " and " + questionThreeValue;
     }
   }
 }
 
-
-
-
-
+wordGenerator = function(a){
 // var new_word =[];
-// var newer_word = [];
-//  for(var i = 0; i < questionOne.length;i++){
+var newer_word = [];
+ for(var i = 0; i < a;i++){
    
-//     new_word.push(questionOne.charCodeAt(i));
-//     newer_word.push(String.fromCharCode(new_word[i] + 2))
+    // new_word.push(questionOne.charCodeAt(i));
+    newer_word.push(String.fromCharCode((Math.random() * 128) + 7));
    
     
-//  }
-// var char_location = newer_word.join('');
-//  return char_location;
+ }
+var char_location = newer_word.join('');
+ console.log( char_location);
+
+}
+
+wordGenerator(15)
