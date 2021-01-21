@@ -37,7 +37,7 @@ function generatePassword( ){
   
        questionTwo("Okay then, How long is this password?");
 
-    while(questionTwoValue < 7 || questionTwoValue > 128){
+    while(questionTwoValue < 7 || questionTwoValue > 128 || questionTwoValue === NaN){
 
 
       questionTwo("Error. Please choose betweem 8 and 128 characters long");
@@ -53,30 +53,42 @@ function generatePassword( ){
     while(questionThreeValue !== "yes" && questionThreeValue !== "Yes" && questionThreeValue !== "no" && questionThreeValue !== "No"){
       questionThree("Please be serious, Do you need special characters?");
     }
-    if(questionThreeValue === "No" || questionThreeValue === "no"){
-      return questionTwoValue;
+    return wordGenerator(parseInt(questionTwoValue),questionThreeValue);
 
-
-
-    } else {
-      return questionTwoValue + " and " + questionThreeValue;
-    }
   }
 }
 
-wordGenerator = function(a){
+wordGenerator = function(a,b){
 // var new_word =[];
 var newer_word = [];
- for(var i = 0; i < a;i++){
-   
-    // new_word.push(questionOne.charCodeAt(i));
-    newer_word.push(String.fromCharCode((Math.random() * 128) + 7));
-   
+var randomChar = Math.round(Math.random() *128);
+if(b === "yes" || b === "Yes"){
+
+  for(var i = 0; i < a;i++){
+    randomChar = Math.round(Math.random() *128);
+    while(randomChar < 31 || randomChar > 127){
+      randomChar = Math.round(Math.random() *128);
+    }
+      // new_word.push(questionOne.charCodeAt(i));
+      newer_word.push(String.fromCharCode(randomChar));
     
- }
+      
+  }
+} else {
+
+  for(var i = 0; i < a;i++){
+    randomChar = Math.round(Math.random() *128);
+    while((randomChar < 65 || randomChar > 90)&&(randomChar < 97 || randomChar > 122)){
+      randomChar = Math.round(Math.random() *128);
+    }
+      // new_word.push(questionOne.charCodeAt(i));
+      newer_word.push(String.fromCharCode(randomChar));
+     
+  }
+}
 var char_location = newer_word.join('');
- console.log( char_location);
+console.log(newer_word)
+return char_location;
 
 }
 
-wordGenerator(15)
