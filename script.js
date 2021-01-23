@@ -103,6 +103,13 @@ var withSpecials = confirm("do you need specials letters?");
 
 }
 
+// numbers 48 - 57 
+// uppers 65 -88
+// lowers 97-122
+// specials 33 47
+
+
+
 
 wordGenerator = function(a,b,c,d,e){
 // var new_word =[];
@@ -118,59 +125,175 @@ for(i = 0; i < questionaireResults.length;i++){
   
      if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2] === false && questionaireResults[3] === false){
 
-    console.log("just uppers");
+      uppersMin = 65,lowersMin = 65,numsMin = 65 ,specialsMin = 65;
+      uppersMax = 88, lowersMax = 88, numsMax = 88, specialsMax = 88;
+    console.log(uppersMin,uppersMax,lowersMin,lowersMax,numsMin,numsMax,specialsMin,specialsMax);
 
 }    else if (questionaireResults[0] === false && questionaireResults[1]  && questionaireResults[2] === false && questionaireResults[3] === false){
-    
+     
+
+       uppersMin = 97 ,lowersMin = 97,numsMin = 97,specialsMin = 97;
+       uppersMax = 122,lowersMax = 122,numsMax = 122,specialsMax = 122;
+
       console.log("just lowers");
 
 }
     else if (questionaireResults[0] === false && questionaireResults[1] === false && questionaireResults[2] && questionaireResults[3] === false){
+ 
+
+           uppersMin = 48,lowersMin = 48,numsMin = 48,specialsMin = 48;
+       uppersMax = 57,lowersMax = 57,numsMax = 57,specialsMax = 57;
 
       console.log("just numbers");
 
 }    
     else if (questionaireResults[0] === false && questionaireResults[1] === false && questionaireResults[2] === false && questionaireResults[3]){
+ 
+
+           uppersMin = 31,lowersMin = 31,numsMin = 31,specialsMin = 31;
+       uppersMax = 47,lowersMax = 47,numsMax = 47,specialsMax = 47;
 
       console.log("just specials");
     
     }  else if (questionaireResults[0] && questionaireResults[1] && questionaireResults[2] === false && questionaireResults[3] === false){
+ 
+      uppersMin = 65
+            
+      lowersMin = 97,numsMin = 97,specialsMin = 97;
+      
+      uppersMax = 88
+      
+      lowersMax = 122,numsMax = 122,specialsMax = 122;
 
       console.log("just letters");
       
       }else if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2]  && questionaireResults[3] === false){
+ 
+
+            uppersMin = 65
+            
+            lowersMin = 48,numsMin = 48,specialsMin = 48;
+            
+            uppersMax = 88
+            
+            lowersMax = 57,numsMax = 57,specialsMax = 57;
 
       console.log("uppers and numbers");
       
       }else if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2] === false && questionaireResults[3]){
+ 
+
+             uppersMin = 65
+             lowersMin = 33,numsMin = 33,specialsMin = 33;
+       uppersMax = 88
+       lowersMax = 47,numsMax = 47,specialsMax = 47;
 
       console.log("uppers and symbols");
       
       }else if (questionaireResults[0] === false && questionaireResults[1] && questionaireResults[2] && questionaireResults[3] === false){
+ 
+
+
+
+      uppersMin = 97,lowersMin = 97,
+      numsMin = 48,specialsMin = 48;
+      uppersMax = 122,lowersMax = 122,
+      numsMax = 57,specialsMax = 57;
 
       console.log("lowers and numbers");
       
       }else if (questionaireResults[0] === false && questionaireResults[1] && questionaireResults[2] === false && questionaireResults[3]){
+ 
+
+
+        uppersMin = 97,lowersMin = 97,
+        numsMin = 33,specialsMin = 33;
+        uppersMax = 122,lowersMax = 122,
+        numsMax = 47,specialsMax = 47;
 
       console.log("lowers and symbols");
       
       }else if (questionaireResults[0] === false && questionaireResults[1] === false && questionaireResults[2] && questionaireResults[3]){
+ 
+        uppersMin = 33,
+        lowersMin = 33,
+        numsMin = 48,
+        specialsMin = 33;
+        
+        
+        uppersMax = 47
+        lowersMax = 47,
+        numsMax = 57,
+        specialsMax = 47;
+
 
       console.log("nums and symbols");
       
       }else if (questionaireResults[0] && questionaireResults[1]  && questionaireResults[2]  && questionaireResults[3] === false){
+ 
+
+ 
+        uppersMin = 65,
+        lowersMin = 97,
+        numsMin = 48,
+        specialsMin = 48;
+        
+        
+        uppersMax = 88
+        lowersMax = 122,
+        numsMax = 57,
+        specialsMax = 57;
+
+
 
       console.log("letters an numbers");
       
       }else if (questionaireResults[0] && questionaireResults[1]  && questionaireResults[2] === false && questionaireResults[3] ){
+ 
+
+        uppersMin = 65,
+        lowersMin = 97,
+        numsMin = 33,
+        specialsMin = 33;
+        
+        
+        uppersMax = 88
+        lowersMax = 122,
+        numsMax = 47,
+        specialsMax = 47;
 
       console.log("letters an specials");
+
+    }else if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2] && questionaireResults[3] ){
       
-      }else if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2] && questionaireResults[3]){
+      uppersMin = 65,
+      lowersMin = 65,
+      numsMin = 48,
+      specialsMin = 33;
+      
+      
+      uppersMax = 88
+      lowersMax = 88,
+      numsMax = 57,
+      specialsMax = 47;
+
+
 
       console.log("uppers, numbers and specials");
       
       }else if (questionaireResults[0] === false && questionaireResults[1] && questionaireResults[2] && questionaireResults[3]){
+ 
+        uppersMin = 97,
+        lowersMin = 97,
+        numsMin = 48,
+        specialsMin = 33;
+        
+        
+        uppersMax = 122
+        lowersMax = 122,
+        numsMax = 57,
+        specialsMax = 47;
+
 
       console.log("lowers, numbers and specials");
       
@@ -179,8 +302,8 @@ for(i = 0; i < questionaireResults.length;i++){
       console.log("all");
        
  
-       uppersMin,lowersMin,numsMin,specialsMin = 31;
-       uppersMax,lowersMax,numsMax,specialsMax = 127;
+       uppersMin = lowersMin = numsMin = specialsMin = 31;
+       uppersMax = lowersMax = numsMax = specialsMax = 127;
       
 
     }
