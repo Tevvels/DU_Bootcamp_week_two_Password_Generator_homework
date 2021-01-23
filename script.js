@@ -22,31 +22,31 @@ generateBtn.addEventListener("click", writePassword);
 
 // recreating this project using the Fisher-Yates Shuffle
 
-function mixArray(array){
-  var index = 12;
-  var tempValue;
-  var newIndex;
+// function mixArray(array){
+//   var originalIndex = array.length;
+//   var tempValue;
+//   var newIndex;
 
-  while (index !== 0){
-    newIndex = Math.floor(Math.random() * index);
-    index -= 1;
-
-
-    tempValue = array[index];
-    array[index] = array[newIndex];
-    array[newIndex] = tempValue;
-
-  }
-
-  return array;
-
-}
+//   while (originalIndex !== -15){
+//     newIndex = Math.floor(Math.random() * originalIndex);
+//     originalIndex -= 1;
 
 
-var testArray = ['a','b','c','A','B','C',1,2,3,"!","@","#"];
-mixArray(testArray);
+//     tempValue = array[originalIndex];
+//     array[originalIndex] = array[newIndex];
+//     array[newIndex] = tempValue;
 
-console.log(testArray);
+//   }
+
+//   return array;
+
+// }
+
+
+// var testArray = ['a','b','c','A','B','C',1,2,3,"!","@","#"];
+// mixArray(testArray);
+
+// console.log(testArray);
 
 
 //works well. :D 
@@ -61,72 +61,171 @@ console.log(testArray);
 
 
 
+// var questionaireResults = [];
+// var uppers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+// var lowers = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+// var nums = [0,1,2,3,4,5,6,7,8,9];
+// var specials = ["!","@","#","$","%","^","&","&","*","-","=","+","/","|","~","`",".",",","?","<",">","/","_"]
+// var passwordLength;
 
+// var arrayLoop = function(array){
+//   for (var i = 0; i < array.length; i++) {
+//     questionaireResults.push(array[i]);
+    
+//   }
 
-
-
+// }
 
 //// customs////
 
-// function generatePassword( ){
+function generatePassword( ){
+
+var upperArguments = [65,93];
+var lowerArguments = [96,122];
+var numberArguments = [39,48];
+
+var passwordLengthQuestion = prompt("Choose a password length it can be 8 to 127 ");
+  
+while(passwordLengthQuestion < 7 || passwordLengthQuestion > 127 || passwordLengthQuestion == NaN){
+    passwordLengthQuestion = prompt("please choose between 8 and 127 characters in length")
+  }; 
 
 
-//   var questionOne = prompt("need a new password?");
+passwordLength = passwordLengthQuestion;
+var withUppers = confirm("do you need uppercase letters?");
+var withLowers = confirm("do you need lowercase letters?");
+var withNums = confirm("do you need numbers letters?");
+var withSpecials = confirm("do you need specials letters?");
+
+
+// console.log(mixArray(questionaireResults));
+ return wordGenerator(passwordLength,withUppers,withLowers,withNums,withSpecials);
+
+}
+
+
+wordGenerator = function(a,b,c,d,e){
+// var new_word =[];
+var newer_word = [];
+var randomChar = Math.round(Math.random() *128);
+var questionaireResults = [b,c,d,e];
+
+for(i = 0; i < questionaireResults.length;i++){
+
+  var uppersMin,uppersMax,lowersMin,lowersMax,numsMin,numsMax,specialsMin,specialsMax;
+
+
   
-  
-//   if(questionOne !== "yes" && questionOne !== "Yes"){
+     if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2] === false && questionaireResults[3] === false){
+
+    console.log("just uppers");
+
+}    else if (questionaireResults[0] === false && questionaireResults[1]  && questionaireResults[2] === false && questionaireResults[3] === false){
     
-//     return "No new password needed!";
-  
-//   } else {
-  
-  
-//     var questionTwo = function(a){ 
-//       questionTwoValue = prompt(a);
-//      }
-//     var questionTwoValue = 0;  
-  
-//        questionTwo("Okay then, How long is this password?");
+      console.log("just lowers");
 
-//     while(questionTwoValue < 7 || questionTwoValue > 128 || questionTwoValue === NaN){
+}
+    else if (questionaireResults[0] === false && questionaireResults[1] === false && questionaireResults[2] && questionaireResults[3] === false){
 
+      console.log("just numbers");
 
-//       questionTwo("Error. Please choose betweem 8 and 128 characters long");
+}    
+    else if (questionaireResults[0] === false && questionaireResults[1] === false && questionaireResults[2] === false && questionaireResults[3]){
+
+      console.log("just specials");
+    
+    }  else if (questionaireResults[0] && questionaireResults[1] && questionaireResults[2] === false && questionaireResults[3] === false){
+
+      console.log("just letters");
       
-//     }
+      }else if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2]  && questionaireResults[3] === false){
 
-//     var questionThree = function(b){
-//       questionThreeValue = prompt(b)
-     
-//     }
-//     var questionThreeValue = '';
-//     questionThree("Do you need special characters?");
-//      questionThreeValue = questionThreeValue.toUpperCase();
-//     console.log(questionThreeValue);
-//     if( questionThreeValue !== "YES" && questionThreeValue !== "NO"){
-//       questionThree("Please be serious, Do you need special characters?");
-//       console.log("in here?")
-//     } else if (questionThreeValue === 'NO'){
-//        console.log("nope")
-//     return wordGenerator(parseInt(questionTwoValue),questionThreeValue);
+      console.log("uppers and numbers");
+      
+      }else if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2] === false && questionaireResults[3]){
 
-//     } else{
-//       console.log("yup")
-//       return wordGenerator(parseInt(questionTwoValue))
-//     }
-//   }
-// }
-// wordGenerator = function(a,b){
-// // var new_word =[];
-// var newer_word = [];
-// var randomChar = Math.round(Math.random() *128);
-// if(b === "YES"){
+      console.log("uppers and symbols");
+      
+      }else if (questionaireResults[0] === false && questionaireResults[1] && questionaireResults[2] && questionaireResults[3] === false){
+
+      console.log("lowers and numbers");
+      
+      }else if (questionaireResults[0] === false && questionaireResults[1] && questionaireResults[2] === false && questionaireResults[3]){
+
+      console.log("lowers and symbols");
+      
+      }else if (questionaireResults[0] === false && questionaireResults[1] === false && questionaireResults[2] && questionaireResults[3]){
+
+      console.log("nums and symbols");
+      
+      }else if (questionaireResults[0] && questionaireResults[1]  && questionaireResults[2]  && questionaireResults[3] === false){
+
+      console.log("letters an numbers");
+      
+      }else if (questionaireResults[0] && questionaireResults[1]  && questionaireResults[2] === false && questionaireResults[3] ){
+
+      console.log("letters an specials");
+      
+      }else if (questionaireResults[0] && questionaireResults[1] === false && questionaireResults[2] && questionaireResults[3]){
+
+      console.log("uppers, numbers and specials");
+      
+      }else if (questionaireResults[0] === false && questionaireResults[1] && questionaireResults[2] && questionaireResults[3]){
+
+      console.log("lowers, numbers and specials");
+      
+      }else{
+   
+      console.log("all");
+       
+ 
+       uppersMin,lowersMin,numsMin,specialsMin = 31;
+       uppersMax,lowersMax,numsMax,specialsMax = 127;
+      
+
+    }
+
+
+
+
+
+
+    for(var i = 0; i < a;i++){
+      randomChar = Math.round(Math.random() *128);
+      while((randomChar < uppersMin || randomChar > uppersMax) && (randomChar < lowersMin || randomChar > lowersMax)&&(randomChar < numsMin || randomChar > numsMax)&&(randomChar < specialsMin || randomChar > specialsMax)){
+        randomChar = Math.round(Math.random() *128);
+        console.log("in yes");
+      }
+        newer_word.push(String.fromCharCode(randomChar));
+
+    }
+
+
+
+    var char_location = newer_word.join('');
+    console.log(newer_word);
+    return char_location;
+    
+  } 
+}
+
+
+
+
+
+
+
+
+
+
+
+// if(a && b && c && d && e){
 
 //   for(var i = 0; i < a;i++){
 //     randomChar = Math.round(Math.random() *128);
 //     while(randomChar < 31 || randomChar > 127){
 //       randomChar = Math.round(Math.random() *128);
-//       console.log("in yes")
+//       console.log("in yes");
 //     }
 //       // new_word.push(questionOne.charCodeAt(i));
 //       newer_word.push(String.fromCharCode(randomChar));
@@ -138,19 +237,14 @@ console.log(testArray);
 //   for(var i = 0; i < a;i++){
 //     randomChar = Math.round(Math.random() *128);
 //     while((randomChar < 65 || randomChar > 90)&&(randomChar < 97 || randomChar > 122)){
-//       randomChar = Math.round(Math.random() *128);
+//           randomChar = Math.round(Math.random() *128);
+//         }
+//           // new_word.push(questionOne.charCodeAt(i));
+//          newer_word.push(String.fromCharCode(randomChar));
 //     }
-//       // new_word.push(questionOne.charCodeAt(i));
-//       newer_word.push(String.fromCharCode(randomChar));
-     
-  
-// }
-
 //   }
-//   var char_location = newer_word.join('');
-//   console.log(newer_word);
-//   return char_location;
+  // var char_location = newer_word.join('');
+  // console.log(newer_word);
+  // return char_location;
   
-
 // }
-
