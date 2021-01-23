@@ -18,12 +18,12 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword( ){
 
-// First question asking the length of the password. The password must be within 8 to 127 characters.
-var passwordLengthQuestion = prompt("Choose a password length it can be 8 to 127 ");
+// First question asking the length of the password. The password must be within 8 to 128 characters.
+var passwordLengthQuestion = prompt("Choose a password length it can be 8 to 128 ");
     
   // a while loop to force the user to answer this question and with the correct values.
-while(passwordLengthQuestion < 7 || passwordLengthQuestion > 127 || passwordLengthQuestion == NaN){
-    passwordLengthQuestion = prompt("please choose between 8 and 127 characters in length")
+while(passwordLengthQuestion < 7 || passwordLengthQuestion > 128 || passwordLengthQuestion == NaN){
+    passwordLengthQuestion = prompt("please choose between 8 and 128 characters in length")
   }; 
 
   // returning the result and adding it the the passwordLength variable.
@@ -56,7 +56,7 @@ wordGenerator = function(a,b,c,d,e){
   // Set of variable arrays containing the min and max values.
 // To be able to create of numbers to find a specifics using the charcodes.
 
-var uppersArguments = [65,93];  //uppercase letters
+var uppersArguments = [65,91];  //uppercase letters
 var lowersArguments = [97,122]; //lowercase letters
 var numbersArguments = [48,57]; // numbers ranging from 0 through 9
 var specialCharsArguments = [33,47]; //special characters or symbols
