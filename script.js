@@ -286,9 +286,6 @@ for(i = 0; i < criteriaResults.length;i++){
 
 
 
-
-
-
     // this for loop calculates the results and runs a Math.random to get a random character for the password
     for(var i = 0; i < a;i++){
       // the random number stored into random Char
