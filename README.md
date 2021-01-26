@@ -20,3 +20,7 @@ Does it contain special characters or symbols?
 After we grab the results we then run those answers into a conditional loop which returns random characters that we in turn combine and make the new password.
 
 This was a fun assignment where I got to flex my Javascript muscles and when I was finished all I could think was how I coulda done this code better.
+
+for the live site please visit https://tevvels.github.io/DU_Bootcamp_week_two_Password_Generator_homework/
+![ image of prompt asking for passowrd length](assets/images/genetarlengthquetion.png)
+![ image of password results](assets/images/theResults.png)
