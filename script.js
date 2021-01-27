@@ -58,7 +58,7 @@ wordGenerator = function(a,b,c,d,e){
 
 var uppersArguments = [65,91];  //uppercase letters
 var lowersArguments = [97,122]; //lowercase letters
-var numbersArguments = [48,57]; // numbers ranging from 0 through 9
+var numbersArguments = [48,56]; // numbers ranging from 0 through 9
 var specialCharsArguments = [33,47]; //special characters or symbols
 
 var randomWord = []; // the array that will hold all the of the new characters
